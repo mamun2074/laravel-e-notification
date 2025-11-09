@@ -7,5 +7,5 @@ Route::group([
     'prefix' => config('enotification-config.route-prefix'),
     'namespace' => 'Mamun2074\ENotification\Http\Controllers'
 ], function () {
-    Route::resource('credentials', 'NotificationCredentialController', ['names' => config('enotification-config.route-name-prefix')]);
+    Route::resource('credentials', 'NotificationCredentialController', ['names' => config('enotification-config.route-name-prefix').'_credentials']);
 });
