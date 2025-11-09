@@ -1,6 +1,11 @@
-<?php  
+<?php
+
 use Illuminate\Support\Facades\Route;
 
-Route::get('/test-route', function () {
-    return "Helo world my school";
+
+Route::group([
+    'prefix' => config('enotification-config.route-prefix'),
+    'namespace' => 'Mamun2074\ENotification\Http\Controllers'
+], function () {
+    Route::resource('credentials', 'NotificationCredentialController', ['names' => config('enotification-config.route-name-prefix')]);
 });
