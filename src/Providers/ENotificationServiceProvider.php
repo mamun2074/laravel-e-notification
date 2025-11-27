@@ -15,6 +15,7 @@ class ENotificationServiceProvider extends ServiceProvider
             __DIR__ . '/../config/enotification-config.php',
             'enotification-config'
         );
+
     }
 
     /**
@@ -31,15 +32,20 @@ class ENotificationServiceProvider extends ServiceProvider
 
         $this->publishes([
             __DIR__ . '/../resources/views' => resource_path('views/vendor/enotification')
-        ], 'views');
+        ], 'enotification-views');
+
+        $this->publishes([
+            __DIR__ . '/../resources/assets' => public_path('vendor/enotification')
+        ], 'enotification-assets');
+
         $this->publishes([
             __DIR__ . '/../config/enotification-config.php' => config_path('enotification-config.php'),
-        ], 'config');
+        ], 'enotification-config');
         $this->publishes([
             __DIR__ . '/../Database/migrations' => database_path('migrations'),
-        ], 'migration');
+        ], 'enotification-migration');
         $this->publishes([
             __DIR__ . '/../Database/seeders' => database_path('seeders'),
-        ], 'seeder');
+        ], 'enotification-seeder');
     }
 }
