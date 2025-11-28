@@ -35,7 +35,7 @@ class ENotificationServiceProvider extends ServiceProvider
         ], 'enotification-views');
 
         $this->publishes([
-            __DIR__ . '/../resources/assets' => public_path('vendor/enotification')
+            __DIR__ . '/../resources/assets' => public_path('vendor/enotification/assets')
         ], 'enotification-assets');
 
         $this->publishes([

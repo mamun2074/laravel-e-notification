@@ -1,40 +1,47 @@
 @extends('enotification::admin.layouts.master')
 
-@section('title')
-    {{ $common['module_manage'] }}
-@endsection
-
 @push('include-css')
     <!-- css for datatable -->
     @include('enotification::admin.common.css.datatable')
 @endpush
 
 @section('content')
-    <section @if ($is_rtl) dir="rtl" @endif class="content">
-        <div class="container-fluid">
-            @include('enotification::admin.common.breadcrumb.breadcrumb')
-            <div class="row clearfix">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="card">
-                        <div class="header">
-                            {{-- @permission('brands.create')
-                                <a href="{{ route('brands.create') }}"
-                                    class="btn btn-primary waves-effect">{{ __('root.common.add') }}</a>
-                            @endpermission --}}
-                        </div>
-                        <div class="body m-t-20">
-                            <table id="brandDataTable"
-                                class="table table-bordered table-striped table-hover js-basic-example dataTable"></table>
-                        </div>
-                    </div>
+    <!-- Stats Grid -->
+    <div class="row g-4 mb-5">
+        <div class="col-12 col-md-6 col-xl-12">
+            <div class="card h-100 border-0 bg-white">
+                <div class="card-body p-4">
+
+                    <table id="myTable" class="table table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Position</th>
+                                <th>Office</th>
+                                <th>Extn.</th>
+                                <th>Start date</th>
+                                <th>Salary</th>
+                            </tr>
+                        </thead>
+                        <tfoot>
+                            <tr>
+                                <th>Name</th>
+                                <th>Position</th>
+                                <th>Office</th>
+                                <th>Extn.</th>
+                                <th>Start date</th>
+                                <th>Salary</th>
+                            </tr>
+                        </tfoot>
+                    </table>
+
                 </div>
             </div>
         </div>
-    </section>
+
+    </div>
 @endsection
 
 @push('include-js')
-    <!-- datatable all js -->
     @include('enotification::admin.common.js.datatable')
-    <script src="{{ Helper::assetV('admin/asset/js/admin/brand/list.js') }}"></script>
 @endpush
