@@ -8,11 +8,11 @@
 @section('content')
     <!-- Stats Grid -->
     <div class="row g-4 mb-5">
-        <div class="col-12 col-md-6 col-xl-12">
+        <div class="col-12">
             <div class="card h-100 border-0 bg-white">
                 <div class="card-body p-4">
 
-                    <table id="myTable" class="table table-striped table-hover">
+                    <table id="myTable" class="table table-striped table-hover table-bordered">
                         <thead>
                             <tr>
                                 <th>Name</th>
